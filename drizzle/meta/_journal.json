@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1779476776839,
+      "tag": "0000_lush_warhawk",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1779480000000,
+      "tag": "0001_profile_accent",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1779490000000,
+      "tag": "0002_monthly_budget",
+      "breakpoints": true
+    }
+  ]
+}
