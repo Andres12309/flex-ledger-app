@@ -1,0 +1,46 @@
+import * as Haptics from 'expo-haptics';
+import { Platform } from 'react-native';
+
+const enabled = Platform.OS !== 'web';
+
+export async function hapticLight(): Promise<void> {
+  if (!enabled) return;
+  await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+}
+
+export async function hapticMedium(): Promise<void> {
+  if (!enabled) return;
+  await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
+}
+
+export async function hapticHeavy(): Promise<void> {
+  if (!enabled) return;
+  await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);
+}
+
+export async function hapticSelection(): Promise<void> {
+  if (!enabled) return;
+  await Haptics.selectionAsync();
+}
+
+export async function hapticSuccess(): Promise<void> {
+  if (!enabled) return;
+  await Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
+}
+
+export async function hapticWarning(): Promise<void> {
+  if (!enabled) return;
+  await Haptics.notificationAsync(Haptics.NotificationFeedbackType.Warning);
+}
+
+export async function hapticError(): Promise<void> {
+  if (!enabled) return;
+  await Haptics.notificationAsync(Haptics.NotificationFeedbackType.Error);
+}
+
+/** Síncrono para onPressIn — no bloquea la UI. */
+export function triggerHaptic(
+  fn: () => Promise<void> = hapticLight,
+): void {
+  void fn();
+}
